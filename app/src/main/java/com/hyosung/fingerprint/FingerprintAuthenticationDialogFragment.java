@@ -92,7 +92,7 @@ public class FingerprintAuthenticationDialogFragment extends DialogFragment impl
 
             createKey();
         } catch (NoSuchAlgorithmException | NoSuchProviderException | KeyStoreException | NoSuchPaddingException e) {
-            Log.d(TAG, "onAttach() : " + e.getMessage());
+            Log.d(TAG, "FingerprintAuthenticationDialogFragment() : " + e.getMessage());
         }
     }
 
@@ -106,12 +106,10 @@ public class FingerprintAuthenticationDialogFragment extends DialogFragment impl
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         getDialog().setTitle(title);
         View v = inflater.inflate(R.layout.fingerprint_authentication_dialog, container, false);
         mCancelButton = (Button) v.findViewById(R.id.cancel_button);
-        mCancelButton.setVisibility(View.VISIBLE);
         mCancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
