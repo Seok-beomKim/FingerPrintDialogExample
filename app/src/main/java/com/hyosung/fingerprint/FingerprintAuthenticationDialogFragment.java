@@ -142,7 +142,7 @@ public class FingerprintAuthenticationDialogFragment extends DialogFragment impl
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        mActivity = (MainActivity) activity;
+        mActivity = (BaseActivity) activity;
 
     }
 
